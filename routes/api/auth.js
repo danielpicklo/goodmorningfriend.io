@@ -52,7 +52,7 @@ router.post('/', [
 
       //create payload and sign token
       const payload = {user: {id: user.id}}
-      jwt.sign(payload, config.get('secret'), { expiresIn: 3600 }, (error, token) => {
+      jwt.sign(payload, config.get('secret'), { expiresIn: 360000 }, (error, token) => {
           if(error) throw error;
           res.json({ token });
       });

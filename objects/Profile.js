@@ -8,9 +8,17 @@ const ProfileSchema = new mongoose.Schema({
     status: {
       type: String
     },
-    friends: {
-      type: [String],
-    },
+    friends: [
+      {
+        user:{
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'user'
+        },
+        name: {
+          type: String
+        }
+      }
+    ],
     date: {
       type: Date,
       default: Date.now
