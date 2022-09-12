@@ -53,6 +53,7 @@ const Register = () => {
               <label htmlFor='password'>
                 <small>Your password</small>
                 <input type='password' placeholder='Your password' name='password' id='password' minLength='8' value={password} onChange={e => onChange(e)} required />
+                <small><em>Must be at least 8 characters long</em></small>
               </label>
             </div>
             <div className='grid grid--one-col'>
