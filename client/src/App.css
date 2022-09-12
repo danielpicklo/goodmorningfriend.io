@@ -1,0 +1,282 @@
+/* 0. GENERAL */
+:root {
+  --primary: #ff5100;
+  --secondary: #e2006b;
+  --tertiary: #5c0dab;
+  --alt-primary: #fa2144;
+  --alt-secondary: #b5008d;
+  --font-base: #110021;
+  --font-alt: #fff3e5;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  font-family: 'Nunito', sans-serif;
+  color: var(--font-base);
+  font: 400;
+  font-size: 16px;
+}
+
+a{
+  display: inline-block;
+  color: var(--tertiary);
+}
+
+/* Utility Classes */
+.flex{
+  display: flex;
+}
+
+.flex--row{
+  flex-direction: row;
+}
+
+.flex--column{
+  flex-direction: column;
+}
+
+.flex--jst-spc-btwn{
+  justify-content: space-between;
+}
+
+.flex--aln-center{
+  align-items: center;
+}
+
+.grid{
+  display: grid;
+  row-gap: 1.5rem;
+  column-gap: 1.5rem;
+}
+
+.grid--one-col{
+  grid-template-columns: 1fr;
+}
+
+.grid--two-col{
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--three-col{
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 1. HEADINGS */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+}
+
+/* 2. BUTTONS & FORMS */
+/* 2.1 Buttons */
+.btn{
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 0 18px 6px rgb(0 0 0 / 15%);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover{
+  box-shadow: 0 0 2px 1px rgb(0 0 0 / 20%);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn--disabled{
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn--link{
+  padding: 0;
+  box-shadow: none;
+}
+
+.btn--nav{
+  color: var(--font-alt);
+}
+
+.btn--small{
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+}
+
+.btn--large{
+  font-size: 1.25rem;
+  padding: 1rem 2rem;
+}
+
+.btn--primary{
+  color: var(--font-alt);
+  background-color: var(--primary);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn--primary:hover{
+  background-color: var(--alt-primary);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn--secondary{
+  color: var(--font-alt);
+  background-color: var(--secondary);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn--secondary:hover{
+  background-color: var(--alt-secondary);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn--tertiary{
+  color: var(--font-alt);
+  background-color: var(--tertiary);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn--tertiary:hover{
+  background-color: var(--alt-secondary);
+  transition: all 0.2s ease-in-out;
+}
+
+/* 2.2 Forms */
+input{
+  border-radius: 4px;
+  padding: 1rem 2rem;
+  outline: none !important;
+  transition: all 0.1s ease-in-out;
+}
+
+input:active,
+input:focus,
+input:hover{
+  border: 2px solid var(--alt-primary);
+  box-shadow: 0 0 10px var(--alt-primary);
+  transition: all 0.1s ease-in-out;
+}
+
+label{
+  display: flex;
+  flex-direction: column;
+}
+
+label small{
+  color: var(--font-alt);
+  margin: 0.5rem 0;
+}
+
+button{
+  display: inline-block;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+/* Navigation & Navbar */
+.navbar{
+  position: relative;
+}
+
+.navbar__navigation{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  list-style: none;
+  column-gap: 1rem;
+}
+
+
+/* Landing Page */
+.landing{
+  background-image: url('../public/files/images/landing-page--waves.svg');
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.landing__wrapper{
+  width: 50%;
+  margin-left: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1.landing__intro--heading{
+  color: var(--font-alt);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+p.landing__intro--description{
+  color: var(--font-alt);
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+img.landing__intro--logo{
+  filter: invert(1);
+  width: 100px;
+  opacity: 0.95;
+  margin-bottom: 2rem;
+}
+
+.landing__buttons{
+  display: grid;
+  grid-template-columns: 25% 25%;
+  column-gap: 2rem;
+}
+
+/* Registration Page */
+.registration{
+  background-image: url('../public/files/images/landing-page--waves.svg');
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.registration__wrapper{
+  width: 30%;
+  margin-left: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1.registration__intro--heading{
+  color: var(--font-alt);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+p.registration__intro--description{
+  color: var(--font-alt);
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.registration__bottom{
+  margin-top: 1rem;
+}
+
+p.registration__bottom--account{
+  color: var(--font-alt);
+}
+
+p.registration__bottom--account > a{
+  color: var(--alt-primary);
+}
