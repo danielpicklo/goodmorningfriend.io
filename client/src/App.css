@@ -1,4 +1,5 @@
 /* 0. GENERAL */
+/* 0.1 Base */
 :root {
   --primary: #ff5100;
   --secondary: #e2006b;
@@ -7,6 +8,10 @@
   --alt-secondary: #b5008d;
   --font-base: #110021;
   --font-alt: #fff3e5;
+
+  --alert-danger: #ff1e00;
+  --alert-warning: #ffab00;
+  --alert-good: #00a537;
 }
 
 *{
@@ -26,7 +31,7 @@ a{
   color: var(--tertiary);
 }
 
-/* Utility Classes */
+/* 0.2 Utility Classes */
 .flex{
   display: flex;
 }
@@ -183,6 +188,37 @@ button{
   width: 100%;
   margin-top: 2rem;
 }
+
+/* 3. UI ELEMENTS */
+/* 3.1 Alerts */
+.alert{
+  position: absolute;
+  padding: 0.8rem;
+  margin: 1rem 0;
+  background-color: var(--primary);
+  color: var(--font-alt);
+  box-shadow: 0 0 18px 6px rgb(0 0 0 / 15%);
+  border-radius: 4px;
+}
+
+.alert > span{
+  padding-left: 1rem;
+}
+
+.alert--danger{
+  background-color: var(--alert-danger);
+}
+
+.alert--warning{
+  background-color: var(--alert-warning);
+}
+
+.alert--good{
+  background-color: var(--alert-good);
+}
+
+
+/* 3.2 Modals */
 
 /* Navigation & Navbar */
 .navbar{
