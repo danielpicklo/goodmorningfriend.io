@@ -1,7 +1,10 @@
 import React, { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { login } from '../../actions/auth';
 
-const Login = () => {
+const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormDate] = useState({
     name: '',
     email: '',
@@ -16,6 +19,12 @@ const Login = () => {
 
   const onSubmit = e => {
     e.preventDefault();
+    login(email, password);
+  }
+
+  //Upon login success, redirect the user
+  if(isAuthenticated){
+    return <Navigate to="/sunhub" />
   }
 
   return (
@@ -52,4 +61,13 @@ const Login = () => {
   )
 }
 
-export default Login
+Login.propTypes = {
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
+}
+
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, { login })(Login);
