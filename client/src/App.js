@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
+import SunHub from './components/layout/Sunhub';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
@@ -37,6 +38,7 @@ const App = () => {
             <Routes>
               <Route exact path='/register' element={<Register />} />
               <Route exact path='/login' element={<Login />} />
+              <Route exact path='/sunhub' element={<SunHub />} />
             </Routes>
           </section>
         </Fragment>
