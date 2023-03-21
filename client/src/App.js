@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
-import SunHub from './components/layout/Sunhub';
+import SunHub from './components/pages/Sunhub';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
